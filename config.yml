@@ -1,0 +1,158 @@
+baseURL: "https://fotoradio.info/"
+title: Fotoradio
+paginate: 5
+theme: PaperMod
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+googleAnalytics: UA-41139230-15
+
+minify:
+    disableXML: true
+    minifyOutput: true
+
+permalinks:
+  posts: "/:year/:month/:slug/"
+
+params:
+    env: production # to enable google analytics, opengraph, twitter-cards and schema and seo.
+    title: Fotoradio
+    description: "un podcast, un sito e una newsletter che parlano di fotografie"
+    author: ""
+    # author: ["Me", "You"] # multiple authors
+    images: ["<link or path of image for opengraph, twitter-cards>"]
+
+    defaultTheme: auto # dark, light, auto
+    disableThemeToggle: false
+
+    ShowReadingTime: true
+    ShowShareButtons: true
+    disableSpecial1stPost: true
+    comments: true
+    hidemeta: false
+    showtoc: false
+    tocopen: false
+    ShowPostNavLinks: true
+
+    assets:
+        # disableHLJS: true # to disable highlight.js
+        # disableFingerprinting: true
+        favicon: "/img/general/favicon.ico"
+        favicon16x16: "/img/general/favicon.ico"
+        favicon32x32: "/img/general/favicon.ico"
+        apple_touch_icon: "/img/general/favicon.ico"
+        safari_pinned_tab: "/img/general/favicon.ico"
+
+    label:
+        text: " "
+        icon: /img/general/fotoradio_logo_200.png
+        iconHeight: 35
+
+    # profile-mode
+    profileMode:
+        enabled: false # needs to be explicitly set
+        title: " "
+        subtitle: "un sito, un podcast e una newsletter che parlano di fotografie"
+        imageUrl: "/img/general/fotoradio_icona_grafica.jpg"
+        imageWidth: 200
+        imageHeight: 200
+        imageTitle: "Copertina Fotoradio"
+        buttons:
+            - name: Ascolta
+              url: "/static_page/listen/"
+            - name: Podcast
+              url: posts
+            - name: Newsletter
+              url: "https://fotoradio.substack.com"
+
+
+    # home-info mode
+    homeInfoParams:
+        Title: "un blog per parlare di fotografie"
+        Content: >
+            Benvenut^ su **Fotoradio.info**, un [podcast](/static_page/listen/), una [newsletter](https://fotoradio.substack.com/) e un [blog](/archives/) per parlare di fotografie. Se vi interessano motivazioni e premesse, guardate [qui](/about/)
+    socialIcons:
+        - name: telegram
+          url: "https://t.me/fotoradio"
+        - name: RsS
+          url: "index.xml"
+
+
+    # socialIcons
+
+    analytics:
+        google:
+            SiteVerificationTag: "XYZabc"
+
+    cover:
+        hidden: false # hide everywhere but not in structured data
+        hiddenInList: true # hide on list pages and home
+        hiddenInSingle: true # hide on single page
+
+    # for search
+    # https://fusejs.io/api/options.html
+    fuseOpts:
+        isCaseSensitive: false
+        shouldSort: true
+        location: 0
+        distance: 100
+        threshold: 0.4
+#        distance: 1000
+#        threshold: 0.4
+        minMatchCharLength: 0
+        keys: ["title", "permalink", "summary", "content"]
+#        keys: []
+
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON # is necessary
+
+menu:
+    main:
+#        - identifier: cerca
+#          name: cerca
+#          url: /search/
+#          weight: 10
+        - identifier: ascolta
+          name: ascolta
+          url: /static_page/listen/
+          weight: 20
+        - identifier: categorie
+          name: categorie
+          url: /categories/
+          weight: 25
+        - identifier: tags
+          name: tags
+          url: /tags/
+          weight: 30
+        - identifier: newsletter
+          name: newsletter
+          url: https://fotoradio.substack.com
+          weight: 35
+        - identifier: archivio
+          name: archivio
+          url: /archives/
+          weight: 40
+        - identifier: contatti
+          name: contatti
+          url: /contact/
+          weight: 95
+        - identifier: about
+          name: about
+          url: /about/
+          weight: 99
+
+# Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
+# pygmentsUseClasses: true
+# markup:
+#     highlight:
+#         # anchorLineNos: true
+#         codeFences: true
+#         guessSyntax: true
+#         lineNos: true
+#         style: monokai
